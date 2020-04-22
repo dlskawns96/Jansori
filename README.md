@@ -1,2 +1,2 @@
 # Jansori
-## All - in - one Alert Application
+## ALL-in-ONE Alarm Application

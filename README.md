@@ -1,2 +1,2 @@
-# Mobile-Programming-Project
-Test
+# Jansori
+## All - in - one Alert Application

@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def WEATHER_PLANET_KEY = '"' + WeatherApiKey + '"' ?: '"Weather Key Error"'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -9,6 +13,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        each { type ->
+            type.buildConfigField 'String', 'WeatherApiKey', WEATHER_PLANET_KEY
+        }
+        manifestPlaceholders = [
+                WEATHER_PLANET_KEY : WEATHER_PLANET_KEY
+        ]
     }
     buildTypes {
         release {

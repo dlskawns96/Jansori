@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JansoriProject</string>
+    <string name="weatherActivity_currentTemp">현재날씨</string>
+    <string name="weatherActivity_maxTemp">최고기온</string>
+    <string name="weatherActivity_minTemp">최저기온</string>
+    <string name="weatherActivity_rainChance">강수확률</string>
 </resources>

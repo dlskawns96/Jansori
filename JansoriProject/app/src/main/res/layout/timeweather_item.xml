@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/timeWeatherTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timeWeather_Time"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"/>
+
+    <ImageView
+        android:id="@+id/timeWeatherImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon"
+        android:layout_below="@id/timeWeatherTime"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/timeWeatherRainChance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeWeatherImage"
+        android:layout_centerHorizontal="true"
+        android:text="@string/timeWeather_rainChance"/>
+
+    <TextView
+        android:id="@+id/timeWeatherTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timeWeatherRainChance"
+        android:layout_centerHorizontal="true"
+        android:text="@string/timeWeather_temperature"/>
+
+
+</RelativeLayout>

@@ -1,53 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".WeatherActivity">
 
-    <LinearLayout
-        android:id="@+id/weatherLayout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/locationName"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/weatherActivity_locationName"
+        android:textSize="25sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+
+    <ImageView
+        android:id="@+id/weatherImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon"
+        android:layout_below="@+id/locationName"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/currentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherImage"
+        android:layout_centerHorizontal="true"
+        android:text="@string/weatherActivity_currentTemp"
+        android:textSize="25sp"/>
+
+
+    <TextView
+        android:id="@+id/rainChance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currentTemp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/weatherActivity_rainChance" />
+
+    <TextView
+        android:id="@+id/eachTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weatherActivity_eachTime"
+        android:layout_below="@+id/rainChance"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/timeWeatherRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eachTime"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:scrollbars="horizontal"
         android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/icon"/>
+    </androidx.recyclerview.widget.RecyclerView>
 
-        <LinearLayout
-            android:id="@+id/weatherInfoLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/currentTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weatherActivity_currentTemp"/>
-            <TextView
-                android:id="@+id/maxTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weatherActivity_maxTemp"
-                android:layout_marginTop="10dp"/>
-            <TextView
-                android:id="@+id/minTemp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weatherActivity_minTemp"
-                android:layout_marginTop="10dp"/>
-            <TextView
-                android:id="@+id/rainChance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/weatherActivity_rainChance"
-                android:layout_marginTop="10dp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

@@ -1,53 +1,51 @@
 package my.project.jansoriproject;
 
+import android.app.Application;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Debug;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.util.JsonReader;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
 import java.util.HashMap;
-
-import javax.net.ssl.HttpsURLConnection;
+import java.util.List;
+import java.util.Locale;
 
 public class WeatherActivity extends AppCompatActivity {
 
+    TextView locationNameText;
+    ImageView weatherImage;
     TextView currentTempText;
-    TextView minTempText;
-    TextView maxTempText;
     TextView rainChanceText;
 
+    RecyclerView timeWeatherRecycler;
+
     HashMap valueMap = new HashMap<String, String>();
+    GeocodeUtil geocodeUtil;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
         initWidgets();
-
+        geocodeUtil = new GeocodeUtil(this);
         final LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        String[] results = getLocation(locationManager);
 
         AsyncHttpsConn asyncHttpsConn = new AsyncHttpsConn();
         try {
+            String[] results = getLocation(locationManager);
             valueMap = asyncHttpsConn.execute(results).get();
         } catch (Exception e) {
             e.printStackTrace();
@@ -55,8 +53,6 @@ public class WeatherActivity extends AppCompatActivity {
 
         Log.d("태","" + valueMap.keySet());
         currentTempText.setText("" + valueMap.get("tc"));
-        maxTempText.setText("" + valueMap.get("tmax"));
-        minTempText.setText("" + valueMap.get("tmin"));
         rainChanceText.setText("" + valueMap.get("sinceOntime"));
     }
 
@@ -64,17 +60,19 @@ public class WeatherActivity extends AppCompatActivity {
      * 이 액티비티의 위젯 초기
      */
     private void initWidgets() {
+        locationNameText = findViewById(R.id.locationName);
+        weatherImage = findViewById(R.id.weatherImage);
         currentTempText = findViewById(R.id.currentTemp);
-        maxTempText = findViewById(R.id.maxTemp);
-        minTempText = findViewById(R.id.minTemp);
         rainChanceText = findViewById(R.id.rainChance);
+//        timeWeatherRecycler = findViewById(R.id.timeWeatherRecycler);
+//        timeWeatherRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)) ;
     }
 
     /**
      * 사용자 현재위치 받아오
      * @param locationManager
      */
-    private String[] getLocation(LocationManager locationManager) {
+    private String[] getLocation(LocationManager locationManager) throws Exception {
 
         String[] result = new String[2];
         //위치 정보 제공 동의 받
@@ -88,6 +86,10 @@ public class WeatherActivity extends AppCompatActivity {
 //            String provider = location.getProvider();
 //            double altitude = location.getAltitude();
 
+            GeocodeUtil.GeoLocation geoLocation = new GeocodeUtil.GeoLocation(latitude, longitude);
+            Log.d("DDD", geocodeUtil.getAddressListUsingGeolocation(geoLocation).get(0).getSubLocality());
+
+            ///////주소 한글로 변환하고, 리사이클러뷰 값 표시
 
             result[0] = "" + latitude;
             result[1] = "" + longitude;
@@ -120,21 +122,4 @@ public class WeatherActivity extends AppCompatActivity {
         public void onProviderDisabled(String provider) {
         }
     };
-
-
-
-
-
-//    public String getWeatherApiKey() {
-//        Bundle bundle;
-//
-//        try {
-//            ApplicationInfo applicationInfo = getApplicationContext().getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
-//            bundle = applicationInfo.metaData;
-//            return bundle.getString("weatherPlanetKey");
-//        } catch (PackageManager.NameNotFoundException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
 }

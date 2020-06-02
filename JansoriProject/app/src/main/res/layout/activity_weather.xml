@@ -7,58 +7,116 @@
 
     <TextView
         android:id="@+id/locationName"
+        android:fontFamily="@font/font_minguk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/weatherActivity_locationName"
         android:textSize="25sp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:textColor="@color/black_text"/>
 
-
-    <ImageView
-        android:id="@+id/weatherImage"
+    <TextView
+        android:id="@+id/currentTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon"
         android:layout_below="@+id/locationName"
-        android:layout_centerHorizontal="true"/>
+        android:fontFamily="@font/font_minguk"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:id="@+id/weatherLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/currentTime"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dp">
+        <ImageView
+            android:id="@+id/weatherImage"
+            android:src="@drawable/image_01d"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+
+            />
+
+        <TextView
+            android:id="@+id/currentTemp"
+            android:fontFamily="@font/font_minguk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="@string/weatherActivity_currentTemp"
+            android:textSize="60dp"
+            android:textColor="@color/black_text"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/currentTemp"
+        android:id="@+id/weatherName"
+        android:fontFamily="@font/font_minguk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/weatherImage"
+        android:layout_below="@id/weatherLinear"
+        android:text="@string/weatherActivity_weatherName"
         android:layout_centerHorizontal="true"
-        android:text="@string/weatherActivity_currentTemp"
-        android:textSize="25sp"/>
-
+        android:layout_marginTop="5dp"/>
 
     <TextView
-        android:id="@+id/rainChance"
+        android:id="@+id/min_max_feel"
+        android:fontFamily="@font/font_minguk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/currentTemp"
+        android:layout_below="@id/weatherName"
         android:layout_centerHorizontal="true"
-        android:text="@string/weatherActivity_rainChance" />
+        android:layout_marginTop="2dp"/>
+
 
     <TextView
         android:id="@+id/eachTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/weatherLinear"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="10dp"
         android:text="@string/weatherActivity_eachTime"
-        android:layout_below="@+id/rainChance"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"/>
+        android:fontFamily="@font/font_minguk"
+        android:textColor="@color/black_text"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/timeWeatherRecycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/eachTime"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="15dp"
         android:scrollbars="horizontal"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/weatherbg">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/eachDay"
+        android:layout_below="@+id/timeWeatherRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/weatherActivity_eachDay"
+        android:fontFamily="@font/font_minguk"
+        android:textColor="@color/black_text"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/dayWeatherRecycler"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eachDay"
+        android:scrollbars="horizontal"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/weatherbg">
 
     </androidx.recyclerview.widget.RecyclerView>
 

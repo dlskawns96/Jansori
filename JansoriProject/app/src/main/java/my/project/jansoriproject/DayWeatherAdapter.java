@@ -14,27 +14,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class TimeWeatherAdapter extends RecyclerView.Adapter<TimeWeatherAdapter.ViewHolder> {
+public class DayWeatherAdapter extends RecyclerView.Adapter<DayWeatherAdapter.ViewHolder>{
 
-    private ArrayList<TimeWeatherItem> listData = new ArrayList<>();
+    private ArrayList<DayWeatherItem> listData = new ArrayList<>();
 
     @NonNull
     @Override
-    public TimeWeatherAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DayWeatherAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = inflater.inflate(R.layout.timeweather_item, parent, false);
-        TimeWeatherAdapter.ViewHolder viewHolder = new TimeWeatherAdapter.ViewHolder(view);
+        DayWeatherAdapter.ViewHolder viewHolder = new DayWeatherAdapter.ViewHolder(view);
 
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        TimeWeatherItem items = listData.get(position);
+        DayWeatherItem items = listData.get(position);
         String data = items.getTime();
         holder.time.setText(data);
         Log.d("DDD", items.getSkyCode());
@@ -63,7 +62,7 @@ public class TimeWeatherAdapter extends RecyclerView.Adapter<TimeWeatherAdapter.
         }
     }
 
-    TimeWeatherAdapter(ArrayList<TimeWeatherItem> timeWeatherItems) {
-        listData = timeWeatherItems;
+    DayWeatherAdapter(ArrayList<DayWeatherItem> dayWeatherItems) {
+        listData = dayWeatherItems;
     }
 }

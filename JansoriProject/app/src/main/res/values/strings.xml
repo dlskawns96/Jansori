@@ -1,12 +1,13 @@
 <resources>
     <string name="app_name">JansoriProject</string>
-    <string name="weatherActivity_currentTemp"> 22º</string>
+    <string name="weatherActivity_currentTemp">%s</string>
     <string name="weatherActivity_maxTemp">최고기온</string>
     <string name="weatherActivity_minTemp">최저기온</string>
     <string name="weatherActivity_rainChance">20%</string>
     <string name="weatherActivity_locationName">수정구</string>
     <string name="weatherActivity_weatherName">흐림</string>
     <string name="weatherActivity_eachTime">시간별</string>
+    <string name="weatherActivity_eachDay">일별</string>
     <string name="timeWeather_weatherName">흐림</string>
     <string name="timeWeather_rainChance"> 20%</string>
     <string name="timeWeather_temperature"> 25º</string>

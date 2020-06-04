@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".WeatherFragment"
+    android:background="@drawable/border"
+    android:paddingLeft="20dp">
+    <Button
+        android:id="@+id/fragmentButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/clear"/>
+
+    <ImageView
+        android:id="@+id/weatherFragmentImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/image_01d"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"/>
+
+    <TextView
+        android:id="@+id/weatherFragmentLocationName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/weatherFragmentImage"
+        android:text="@string/weatherActivity_locationName"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:textSize="30dp"
+        android:fontFamily="@font/font_minguk"
+        android:textColor="@color/black_text"/>
+
+    <TextView
+        android:id="@+id/weatherFragmentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/weatherFragmentLocationName"
+        android:layout_below="@id/weatherFragmentLocationName"
+        android:text="@string/weatherActivity_weatherName"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:textColor="@color/black_text"
+        android:fontFamily="@font/font_minguk"
+        />
+
+    <TextView
+        android:id="@+id/weatherFragmentCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timeWeather_temperature"
+        android:layout_below="@id/weatherFragmentLocationName"
+        android:layout_toRightOf="@+id/weatherFragmentName"
+        android:textSize="20dp"
+        android:fontFamily="@font/font_minguk"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black_text"/>
+
+</RelativeLayout>

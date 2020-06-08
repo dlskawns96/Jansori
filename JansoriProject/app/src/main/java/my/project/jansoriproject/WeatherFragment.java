@@ -39,7 +39,7 @@ public class WeatherFragment extends Fragment implements View.OnClickListener {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState)  {
         super.onActivityCreated(savedInstanceState);
 
         weatherMaps = ((MainActivity)MainActivity.mainContext).getWeatherMaps();

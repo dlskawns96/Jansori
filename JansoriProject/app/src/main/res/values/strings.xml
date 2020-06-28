@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JansoriProject</string>
+    <string name="app_name">Jansori</string>
     <string name="weatherActivity_currentTemp">%s</string>
     <string name="weatherActivity_maxTemp">최고기온</string>
     <string name="weatherActivity_minTemp">최저기온</string>
@@ -13,7 +13,25 @@
     <string name="timeWeather_temperature"> 25º</string>
     <string name="timeWeather_Time">오후 2시</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alarmMainText">Press button to add alarm</string>
+    <string name="alarmSetRepeatTitle">Repeat</string>
+    <string name="Time">Time</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="label">Label</string>
+    <string name="add_label_hint">AlarmLabel</string>
+    <string name="AlarmTime">17:17</string>
 
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+    <string name="sun">Sun</string>
 </resources>

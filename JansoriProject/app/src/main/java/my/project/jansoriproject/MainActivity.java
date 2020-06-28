@@ -3,10 +3,14 @@ package my.project.jansoriproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,9 +18,15 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private Double longitude;
     private String address;
 
-    private WeatherMaps weatherMaps;
+    public WeatherMaps weatherMaps;
 
     public class LocationInfo {
         Double latitude;
@@ -50,7 +60,42 @@ public class MainActivity extends AppCompatActivity {
         mainContext = this;
         getCurrentAddress();
         weatherMaps = getWeatherData(latitude, longitude);
+
+        // Weather Notification
+        //createNotificationChannel();
+
     }
+
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Weather";
+            String description = "날씨와 관련된 알람을 보내줍니다.";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("Weather", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "Weather");
+            builder.setLargeIcon(null)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setWhen(System.currentTimeMillis())
+                    .setShowWhen(true)
+                    .setAutoCancel(true)
+                    .setPriority(NotificationCompat.PRIORITY_HIGH)
+                    .setContentTitle("Notification Test!!!");
+
+            NotificationManagerCompat notificationManagerCompat = NotificationManagerCompat.from(this);
+            // notificationId is a unique int for each notification that you must define
+            notificationManager.notify(0, builder.build());
+
+        }
+    }
+
 
     public WeatherMaps getWeatherMaps() {
         return weatherMaps;

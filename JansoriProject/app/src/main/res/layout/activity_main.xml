@@ -11,13 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="9">
-        <fragment
-            android:id="@+id/homeFragment1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:name="my.project.jansoriproject.AlarmFragment"
-            />
+
         <fragment
             android:id="@+id/homeFragment2"
             android:layout_width="match_parent"

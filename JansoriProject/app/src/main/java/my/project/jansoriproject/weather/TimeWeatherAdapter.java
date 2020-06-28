@@ -1,4 +1,4 @@
-package my.project.jansoriproject;
+package my.project.jansoriproject.weather;
 
 import android.content.Context;
 import android.util.Log;
@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import my.project.jansoriproject.R;
 
 public class TimeWeatherAdapter extends RecyclerView.Adapter<TimeWeatherAdapter.ViewHolder> {
 
@@ -63,7 +64,7 @@ public class TimeWeatherAdapter extends RecyclerView.Adapter<TimeWeatherAdapter.
         }
     }
 
-    TimeWeatherAdapter(ArrayList<TimeWeatherItem> timeWeatherItems) {
+    public TimeWeatherAdapter(ArrayList<TimeWeatherItem> timeWeatherItems) {
         listData = timeWeatherItems;
     }
 }

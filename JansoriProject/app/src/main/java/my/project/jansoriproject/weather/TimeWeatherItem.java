@@ -1,6 +1,6 @@
-package my.project.jansoriproject;
+package my.project.jansoriproject.weather;
 
-public class DayWeatherItem {
+public class TimeWeatherItem {
 
     private String time;
     private String temp;
@@ -29,5 +29,4 @@ public class DayWeatherItem {
     public void setSkyCode(String skyCode) {
         this.skyCode = skyCode;
     }
-
 }

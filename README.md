@@ -11,3 +11,6 @@ This will remind and give notice you about Weather, Calendar, Public transportat
 + 김성준 / iamsjune@gmail.com
 + 이남준 / dlskawns96@gmail.com
 + 안기주 / wn7257@naver.com
+
+## Demo Video
+> https://youtu.be/8X0_UyCTTdU

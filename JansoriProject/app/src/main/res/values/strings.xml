@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">JansoriProject</string>
+    <string name="transportation_startLocation">출발지</string>
+    <string name="transportation_destLocation">도착지</string>
+    <string name="transportation_stationListButton">검색</string>
+    <string name="transportation_routeButton">길찾기</string>
+    <string name="transportation_swapLocation">출발지↔도착지</string>
+    <string name="transportation_variousInfo">현재위치 반경 500m 정류장입니다.</string>
+    <string name="transportation_way">상행/하행</string>
+    <string name="cancel">취소</string>
+    <string name="add">추가</string>
+    <string name="out">나가기</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

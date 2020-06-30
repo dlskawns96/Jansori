@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/white">
+
+    <ImageView
+        android:id="@+id/calendar_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/calendar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/start_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="일정을 등록해야지~"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+
+<!--        <TextView-->
+<!--            android:id="@+id/dest_txt"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="15sp"-->
+<!--            android:includeFontPadding="false"-->
+<!--            android:text="뭐가 필요하지?"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textStyle="bold"/>-->
+    </LinearLayout>
+</LinearLayout>

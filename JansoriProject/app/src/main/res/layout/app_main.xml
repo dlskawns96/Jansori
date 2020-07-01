@@ -11,34 +11,24 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_weight="9">
-
+        <fragment
+            android:id="@+id/homeFragment1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
         <fragment
             android:id="@+id/homeFragment2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:name="my.project.jansoriproject.WeatherFragment"
             />
         <fragment
             android:id="@+id/homeFragment3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:name="my.project.jansoriproject.BuildingFragment"
             />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/transportationFragment"
-            android:name="my.project.jansoriproject.MainTransportation" />
-
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/CalendarFragment"
-            android:name="my.project.jansoriproject.MainCalendar" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -51,27 +41,27 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="날씨"/>
+            android:text="A"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="교통"/>
+            android:text="A"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="시간표"/>
+            android:text="A"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="할일"/>
+            android:text="A"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="설정"/>
+            android:text="A"/>
 
     </LinearLayout>
 

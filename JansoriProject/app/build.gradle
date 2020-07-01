@@ -9,19 +9,21 @@ def ODISAY_API_KEY = properties.getProperty('odisay.key')
 def BUS_API_KEY = properties.getProperty('bus.arrival.key')
 def SUBWAY_API_KEY = properties.getProperty('subway.arrival.key')
 
+def WEATHER_PLANET_KEY = '"' + WeatherApiKey + '"' ?: '"Weather Key Error"'
 android {
     compileSdkVersion 29
     defaultConfig {
         applicationId "my.project.jansoriproject"
-        minSdkVersion 16
+        minSdkVersion 27
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //
-        // add manifestplaceholders
-        //
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        each { type ->
+            type.buildConfigField 'String', 'WeatherApiKey', WEATHER_PLANET_KEY
+        }
         manifestPlaceholders = [
+                WEATHER_PLANET_KEY: WEATHER_PLANET_KEY
                 ODISAY_API_KEY : ODISAY_API_KEY,
                 BUS_API_KEY : BUS_API_KEY,
                 SUBWAY_API_KEY : SUBWAY_API_KEY
@@ -37,19 +39,40 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //noinspection GradleCompatible
-    implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    //noinspection GradleCompatible
-    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.google.code.findbugs:jsr305:2.0.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    // add recyclerview
-    //noinspection GradleCompatible
-    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    // For Weather Notification
+    implementation 'androidx.appcompat:appcompat:1.3.0-alpha01'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    implementation "androidx.core:core:1.3.0"
+
+    // For FCM
+    implementation 'com.google.firebase:firebase-analytics:17.4.3'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+    implementation 'com.firebase:firebase-jobdispatcher:0.8.6'
+
+    //For CoordinateLayout
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
+
+    //For RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+    // For control over item selection of both touch and mouse driven selection
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+
+    //For FloatingActionButton
+    implementation "com.google.android.material:material:1.1.0"
+
     // calendar view
     implementation 'com.prolificinteractive:material-calendarview:1.4.3'
 }
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'

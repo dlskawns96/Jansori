@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/ann_course"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="과목을 입력하세요"/>
+
+    <EditText
+        android:id="@+id/input_course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="과목명"
+        />
+    <TextView
+        android:id="@+id/ann_prof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="교수명을 입력하세요"
+        />
+    <EditText
+        android:id="@+id/input_prof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="홍길동"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ann_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시작시간"/>
+
+        <EditText
+            android:id="@+id/input_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="09:00"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ann_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="시작시간"/>
+
+        <EditText
+            android:id="@+id/input_end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="10:00"/>
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/mon_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mon"/>
+        <CheckBox
+            android:id="@+id/tue_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tue" />
+        <CheckBox
+            android:id="@+id/wed_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Wed" />
+        <CheckBox
+            android:id="@+id/thu_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Thu" />
+        <CheckBox
+            android:id="@+id/fri_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fri" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/allow_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            />
+
+    </LinearLayout>
+</LinearLayout>

@@ -10,8 +10,9 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
+
+import androidx.core.content.ContextCompat;
 
 public class GpsTracker extends Service implements LocationListener {
     private final Context mContext;
@@ -152,6 +153,10 @@ public class GpsTracker extends Service implements LocationListener {
             locationManager.removeUpdates(GpsTracker.this);
         }
     }
+<<<<<<< HEAD
 
 }
 
+=======
+}
+>>>>>>> 178fed7cdde1ea925ff4efa47fff062ca9037a87

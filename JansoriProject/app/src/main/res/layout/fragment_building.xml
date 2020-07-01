@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".BuildingFragment"
+    android:background="@drawable/border"
+    android:paddingLeft="20dp">
+
+    <ImageView
+        android:id="@+id/buildingImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/building"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/buildingImage"
+        android:text="개발중"
+        android:textSize="40dp"
+        android:layout_marginLeft="60dp"
+        android:textColor="@color/black_text"
+        android:fontFamily="@font/font_minguk"/>
+
+</RelativeLayout>

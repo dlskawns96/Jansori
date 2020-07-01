@@ -15,7 +15,7 @@ This will remind and give notice you about Weather, Calendar, Public transportat
 + 안기주 / wn7257@naver.com
 
 ## Demo Video
-> https://youtu.be/8X0_UyCTTdU
+[![Watch the video](https://img.youtube.com/vi/8X0_UyCTTdU/hqdefault.jpg)](https://youtu.be/8X0_UyCTTdU)
 
 ## Screen Shots
 <div>

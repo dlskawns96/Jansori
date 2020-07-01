@@ -2,6 +2,8 @@
 > 2020 -1 Mobile Programming Project  
 > ALL-in-ONE Alarm Application
 
+![Jansori](https://user-images.githubusercontent.com/22260098/86214846-b3034780-bbb6-11ea-9d1b-701eaf27d6ba.png)
+
 ## Description
 Notify you about various information for life.  
 This will remind and give notice you about Weather, Calendar, Public transportation, To-do list  
